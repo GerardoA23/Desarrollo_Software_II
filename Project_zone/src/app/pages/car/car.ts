@@ -1,16 +1,19 @@
-import { Component, signal } from "@angular/core";
+import { UpperCasePipe } from "@angular/common";
+import { Component, computed, signal } from "@angular/core";
 
 @Component({
+    selector: 'app-car',
+    imports: [
+        UpperCasePipe
+    ],
     templateUrl: './car.html'
 })
 export class CarComponent {
     brand = signal('Toyota');
     year= signal(2020);
     student = signal('cristian');
-
-    getCarDescription(){
-        return `${this.brand()} - ${this.year()}`;
-    }
+    getCarDescription = computed(()=> `${this.brand()} - ${this.year()}`)
+    capitalizedStudent = computed(()=> `${this.student().toUpperCase()}`)
 
     changeCar(){
         this.brand.update((Value: string): string => Value = 'Kia');
