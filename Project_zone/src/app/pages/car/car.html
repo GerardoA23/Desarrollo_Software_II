@@ -1,0 +1,13 @@
+<h1>Ejercicio - 26/09/2025</h1>
+<h2>Marca: {{ brand() }}</h2>
+<h2>Año: {{ year() }}</h2>
+<h2>Nombre Estudiante: {{ student() }}</h2>
+<h3>Descripción: {{ getCarDescription() }}</h3>
+<button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" (click)="changeCar()">Cambiar Auto</button>
+<button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" (click)="changeYear()">Cambiar Año</button>
+<button class="btn btn-outline-secondary d-inline-flex align-items-center" type="button" (click)="resetForm()">
+    Resetear
+    <svg class="bi ms-1" width="20" height="20">
+        <use xlink:href="#arrow-right-short"></use>
+    </svg>
+</button>
